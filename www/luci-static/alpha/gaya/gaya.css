@@ -305,7 +305,7 @@ label {
   body {
     font-size: 0.8rem;
     background: url('backgroundfanspage.png');
-    height: 100%;
+    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -472,6 +472,23 @@ label {
   /* End Footer */
   
   /* Navbar */
+  @keyframes running-button {
+  0% {
+    box-shadow: 0 0 10px 0px cyan;
+  }
+  25% {
+    box-shadow: 0 0 10px 10px darkcyan;
+  }
+  50% {
+    box-shadow: 0 0 10px 0px cyan;
+  }
+  75% {
+    box-shadow: 0 0 10px 10px darkcyan;
+  }
+  100% {
+    box-shadow: 0 0 10px 0px cyan;
+  }
+}
   @media screen and (min-width: 720px) {
     .navbar {
       position: fixed;
@@ -482,9 +499,10 @@ label {
       border-top: var(--navBorder);
       text-align: center;
       background-color: #0000009a;
-      box-shadow: 0 0 10px 0px #0000002d;
+      box-shadow: 0 0 10px 0px cyan;
       box-sizing: content-box;
       border-radius: 10px;
+      
     }
     .navbar--hidden {
       transform: translateY(60px);
@@ -494,8 +512,8 @@ label {
     .navbar .toggler {
       transition-duration: 100ms;
       position: absolute;
-      background: #787878;
-      box-shadow: 0 0 10px 0 #0000000f;
+      background: #ffffff9a;
+      box-shadow: 0 0 20px 0 cyan;
       transform: translateY(50%);
       bottom: 50%;
       right: calc(100% + 10px);
@@ -506,6 +524,7 @@ label {
       content: "";
       box-sizing: border-box;
       cursor: pointer;
+      animation: running-button 4s infinite;
     }
     .navbar .toggler img {
       transform: rotate(270deg);
@@ -543,10 +562,20 @@ label {
       transform: rotate(90deg);
     }
   }
-  
+ @keyframes running-color {
+  0% {
+    box-shadow: 0 0 10px 0px cyan;
+  }
+  50% {
+    box-shadow: 0 0 10px 10px darkcyan; /* Replace yellow with your desired color */
+  }
+  100% {
+    box-shadow: 0 0 10px 0px cyan;
+  }
+} 
   @media screen and (max-width: 720px) {
-    .navbar {
       
+    .navbar {
       overflow: hidden;
       position: fixed;
       bottom: 5px;
@@ -561,9 +590,11 @@ label {
       height: calc(50px + constant(safe-area-inset-bottom));
       height: calc(50px + env(safe-area-inset-bottom));
       background-color: #000000f3;
+      box-shadow: 0 0 10px 0px cyan;
       border-radius: 10px;
-      
+      animation: running-color 2s infinite;
     }
+
     .navbar--hidden {
       transform: translateY(60px);
       box-shadow: none;
@@ -1330,7 +1361,6 @@ h3 {
     opacity: 1;
     transition: opacity 0.25s ease-in;
     margin: inherit !important;
-    background: #0000009a;
   }
   .cbi-section-node-tabbed {
     margin-top: 0;
@@ -1360,7 +1390,6 @@ h3 {
     display: inline-block;
     width: 100%;
     padding: 0.35rem 1rem 0.2rem;
-    background: none;
   }
   .cbi-value ul {
     line-height: 1.25;
@@ -1879,7 +1908,7 @@ h3 {
     color: #eee;
     border: 0;
     border-radius: 0;
-    background-color: none;
+    background-color: #0000009a;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 2px 0 rgba(0, 0, 0, 0.12);
     padding: 1rem;
   }
